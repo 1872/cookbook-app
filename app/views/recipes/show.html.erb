@@ -2,5 +2,7 @@
   <p>Chef: <%= @recipe.chef %></p>
   <p>Ingredients: <%= @recipe.ingredients %></p>
   <p>Directions: <%= @recipe.directions %></p>
+  <a href="/recipes/<%= @recipe.id %>/edit">Edit this recipe</a>
+  <%= link_to "Edit this recipe", "/recipes/#{@recipe.id}/edit" %>
   <%= link_to "Back to all recipes", "/recipes" %>
   
