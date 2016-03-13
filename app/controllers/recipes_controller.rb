@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
       ingredients: params[:ingredients],
       directions: params[:directions]
     )
-    render 'create.html.erb'
+    redirect_to '/recipes'
   end
 
   def show
