@@ -9,13 +9,13 @@ class RecipesController < ApplicationController
   end
 
   def create
-    Recipe.create(
+    recipe = Recipe.create(
       title: params[:title],
       chef: params[:chef],
       ingredients: params[:ingredients],
       directions: params[:directions]
     )
-    redirect_to '/recipes'
+    redirect_to "/recipes/#{recipe.id}"
   end
 
   def show
@@ -39,13 +39,13 @@ class RecipesController < ApplicationController
       ingredients: params[:ingredients],
       directions: params[:directions]
     )
-    render 'update.html.erb'
+    redirect_to "/recipes/#{@recipe.id}"
   end
 
   def destroy
     recipe_id = params[:id]
     @recipe = Recipe.find_by(id: recipe_id)
     @recipe.destroy
-    render 'destroy.html.erb'
+    redirect_to "/recipes"
   end
 end
