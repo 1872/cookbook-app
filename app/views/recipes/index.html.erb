@@ -1,6 +1,7 @@
 <%= link_to "Create a new recipe", "/recipes/new" %>
+<% @recipes.each_slice(3) do |three_recipes| %>
 <div class="row">
-  <% @recipes.each do |recipe| %>
+  <% three_recipes.each do |recipe| %>
     <div class="col-md-4">
       <div class="well">
         <h2>Title: <%= link_to recipe.title, "/recipes/#{recipe.id}" %></h2>
@@ -26,4 +27,5 @@
     </div>
   <% end %>
 </div>
+<% end %>
 
