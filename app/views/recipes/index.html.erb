@@ -5,6 +5,7 @@
       <div class="well">
         <h2>Title: <%= link_to recipe.title, "/recipes/#{recipe.id}" %></h2>
         <p>Chef: <%= recipe.chef %></p>
+        <p>Prep time: <%= recipe.prep_time %></p>
         <p>Updated at: <%= recipe.friendly_updated_at %></p>
         <img src="<%= recipe.image %>" alt="">
         <!-- <p>Ingredients: <%= recipe.ingredients %></p> -->
