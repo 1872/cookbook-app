@@ -8,6 +8,7 @@ class RecipesController < ApplicationController
   end
 
   def new
+    @recipe = Recipe.new
     render 'new.html.erb'
   end
 
